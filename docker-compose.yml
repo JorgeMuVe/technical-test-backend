@@ -1,0 +1,17 @@
+version: '3'
+services:
+  ### Mysql Database for Users
+  db-users:
+    container_name: db-users
+    image: mysql:8.0.33
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: ms_users
+      MYSQL_USER: elektra
+      MYSQL_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - 3306:3306
+    expose:
+      - 3306
+
